@@ -1,0 +1,15 @@
+<% layout('layout') -%>
+<div class="card">
+  <h2><%= teacher ? 'Edit' : 'Tambah' %> Guru</h2>
+  <form method="post" action="<%= teacher ? '/teachers/edit/'+teacher.id : '/teachers/add' %>">
+    <label>NIDN</label>
+    <input name="nidn" value="<%= teacher ? teacher.nidn : '' %>">
+    <label>Nama</label>
+    <input name="name" value="<%= teacher ? teacher.name : '' %>">
+    <label>Mata Pelajaran</label>
+    <input name="subject" value="<%= teacher ? teacher.subject : '' %>">
+    <label>Phone</label>
+    <input name="phone" value="<%= teacher ? teacher.phone : '' %>">
+    <button type="submit">Simpan</button>
+  </form>
+</div>

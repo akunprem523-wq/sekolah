@@ -1,0 +1,22 @@
+<% layout('layout') -%>
+<div class="card">
+  <h2>Data Guru</h2>
+  <a class="btn" href="/teachers/add">Tambah Guru</a>
+  <table class="table">
+    <thead><tr><th>NIDN</th><th>Nama</th><th>Mata Pelajaran</th><th>Phone</th><th>Aksi</th></tr></thead>
+    <tbody>
+      <% teachers.forEach(t => { %>
+        <tr>
+          <td><%= t.nidn %></td>
+          <td><%= t.name %></td>
+          <td><%= t.subject %></td>
+          <td><%= t.phone %></td>
+          <td>
+            <a href="/teachers/edit/<%= t.id %>">Edit</a>
+            <form style="display:inline" method="post" action="/teachers/delete/<%= t.id %>"><button type="submit" onclick="return confirm('Hapus?')">Hapus</button></form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

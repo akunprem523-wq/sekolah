@@ -1,0 +1,17 @@
+<% layout('layout') -%>
+<div class="card">
+  <h2><%= student ? 'Edit' : 'Tambah' %> Siswa</h2>
+  <form method="post" action="<%= student ? '/students/edit/'+student.id : '/students/add' %>">
+    <label>NIS</label>
+    <input name="nis" value="<%= student ? student.nis : '' %>" required>
+    <label>Nama</label>
+    <input name="name" value="<%= student ? student.name : '' %>" required>
+    <label>Kelas</label>
+    <input name="kelas" value="<%= student ? student.kelas : '' %>">
+    <label>Alamat</label>
+    <input name="alamat" value="<%= student ? student.alamat : '' %>">
+    <label>Phone</label>
+    <input name="phone" value="<%= student ? student.phone : '' %>">
+    <button type="submit">Simpan</button>
+  </form>
+</div>
